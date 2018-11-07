@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 use App\Http\Requests;
 
 class EditProfileController extends Controller
@@ -23,8 +23,17 @@ class EditProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function index()
+    // {
+    //     return view('edit_profile');
+    // }
+
+    public function getUser()
     {
-        return view('edit_profile');
+        $datas = User::all();
+        foreach($datas as $data ){
+            return view('edit_profile', ['data' => $data] );     
+        }
+        
     }
 }

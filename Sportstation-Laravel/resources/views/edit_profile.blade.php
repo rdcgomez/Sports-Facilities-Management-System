@@ -14,7 +14,7 @@
                                 <label for="name" class="col-md-4 control-label">Name</label>
     
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ $data->name }}">
     
                                     @if ($errors->has('name'))
                                         <span class="help-block">
@@ -28,7 +28,7 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
     
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ $data->email }}">
     
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -42,7 +42,7 @@
                                 <label for="mobile_number" class="col-md-4 control-label">Mobile Number</label>
     
                                 <div class="col-md-6">
-                                    <input id="mobile_number" type="number" class="form-control" name="mobile_number" value="{{ old('mobile_number') }}">
+                                    <input id="mobile_number" type="number" class="form-control" name="mobile_number" value="{{ $data->mobile_number }}">
     
                                     @if ($errors->has('mobile_number'))
                                         <span class="help-block">
@@ -56,7 +56,7 @@
                                 <label for="city" class="col-md-4 control-label">City Location</label>
     
                                 <div class="col-md-6">
-                                    <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}">
+                                    <input id="city" type="text" class="form-control" name="city" value="{{ $data->city }}">
     
                                     @if ($errors->has('city'))
                                         <span class="help-block">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
     
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            {{-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="col-md-4 control-label">Password</label>
     
                                 <div class="col-md-6">
@@ -92,7 +92,7 @@
                                         </span>
                                     @endif
                                 </div>
-                            </div>
+                            </div> --}}
     
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
