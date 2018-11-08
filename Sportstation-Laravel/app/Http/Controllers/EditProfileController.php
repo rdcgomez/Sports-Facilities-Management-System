@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class EditProfileController extends Controller
 {
@@ -29,11 +30,30 @@ class EditProfileController extends Controller
     // }
 
     public function getUser()
-    {
-        $datas = User::all();
-        foreach($datas as $data ){
-            return view('edit_profile', ['data' => $data] );     
-        }
+    {   
+        $user = Auth::user();
+        return view('edit_profile', compact('user') );     
+        // $database = User::all();
+        // foreach($database as $data ){
+        //     return view('edit_profile', ['data' => $data] );     
+        // }
         
     }
+
+    public function updateUser(Request $request)
+    {
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $mobile_number = $request->get('mobile_number');
+        $city = $request->get('city');
+        User::update([
+                    'name' => $name,
+                    'email' => $email,
+                    'mobile_number' => $mobile_number,
+                    'city' => $city ]);
+        return view('home');
+
+    }
+        
+    
 }

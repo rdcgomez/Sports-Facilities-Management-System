@@ -7,14 +7,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Register</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/update_profile') }}">
                             {{ csrf_field() }}
     
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Name</label>
     
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ $data->name }}">
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}">
     
                                     @if ($errors->has('name'))
                                         <span class="help-block">
@@ -28,7 +28,7 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
     
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ $data->email }}">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}">
     
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -42,7 +42,7 @@
                                 <label for="mobile_number" class="col-md-4 control-label">Mobile Number</label>
     
                                 <div class="col-md-6">
-                                    <input id="mobile_number" type="number" class="form-control" name="mobile_number" value="{{ $data->mobile_number }}">
+                                    <input id="mobile_number" type="number" class="form-control" name="mobile_number" value="{{ $user->mobile_number }}">
     
                                     @if ($errors->has('mobile_number'))
                                         <span class="help-block">
@@ -56,7 +56,7 @@
                                 <label for="city" class="col-md-4 control-label">City Location</label>
     
                                 <div class="col-md-6">
-                                    <input id="city" type="text" class="form-control" name="city" value="{{ $data->city }}">
+                                    <input id="city" type="text" class="form-control" name="city" value="{{ $user->city }}">
     
                                     @if ($errors->has('city'))
                                         <span class="help-block">

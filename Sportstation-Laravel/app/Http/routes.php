@@ -19,4 +19,4 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/edit_profile', 'EditProfileController@getUser');
-// Route::get('/edit_profile/{id}', 'EditProfileController@getUser');
+Route::post('/update_profile', 'EditProfileController@updateUser');
